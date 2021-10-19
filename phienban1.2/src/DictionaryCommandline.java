@@ -21,6 +21,21 @@ public class DictionaryCommandline {
         Dictionary c =a.insertFromCommandline();
         b.showAllWords(c);
     }
+
+    public void dictionarySearcher(DictionaryManagement a) throws IOException{
+
+
+        System.out.println("Nhap tu can tim kiem");
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+          for(Word i : a.f.list) {
+            int index = i.getWord_target().indexOf(s);
+            if (index == 0) {
+                System.out.println(i.getWord_target() + "\t|" + i.getWord_explain());
+            }
+        }
+
+    }
     //Hàm gọi các hàm insertFromFile, showAllWords, dictionaryLookup
     public void dictionaryAdvance() throws IOException {
         DictionaryManagement a = new DictionaryManagement();
